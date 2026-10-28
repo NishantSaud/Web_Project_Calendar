@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Day Ledger</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Familjen+Grotesk:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <div class="wrap">
+    <header class="clock">
+      <div class="clock-main">
+        <div class="clock-label">Nepal Time &middot; Asia/Kathmandu</div>
+        <div class="time" id="time" aria-live="off">--:--:--</div>
+        <div class="long-date" id="longDate">&nbsp;</div>
+        <div class="next-up" id="nextUp"></div>
+      </div>
+      <div class="clock-tools">
+        <div class="seg" role="group" aria-label="Clock format">
+          <button type="button" id="fmt12" aria-pressed="true">12h</button>
+          <button type="button" id="fmt24" aria-pressed="false">24h</button>
+        </div>
+        <button type="button" class="today-btn" id="alertBtn">Enable alerts</button>
+      </div>
+    </header>
+
+    <main class="split">
+      <section class="cal" aria-label="Calendar">
+        <div class="cal-head">
+          <button class="icon-btn" id="prev" type="button" aria-label="Previous month">&#8249;</button>
+          <h2 id="monthTitle">Month</h2>
+          <button class="icon-btn" id="next" type="button" aria-label="Next month">&#8250;</button>
+        </div>
+        <div class="dow" aria-hidden="true">
+          <span>SUN</span><span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span>
+        </div>
+        <div class="grid" id="grid" role="grid"></div>
+        <div class="legend">
+          <span><i class="swatch sw-today"></i>Today</span>
+          <span><i class="swatch sw-sel"></i>Selected</span>
+          <span><i class="dot" style="color:var(--fg)"></i>Event</span>
+          <span><i class="dot rem" style="color:var(--fg)"></i>Reminder</span>
+          <button class="today-btn" id="goToday" type="button" style="margin-left:auto">Jump to today</button>
+        </div>
+      </section>
+
+      <aside class="ledger" aria-label="Selected day">
+        <div class="ledger-head">
+          <div>
+            <h3 id="ledgerTitle">Selected day</h3>
+            <div class="sub" id="ledgerSub"></div>
+          </div>
+          <button class="btn" id="addBtn" type="button">Add</button>
+        </div>
+        <div id="editorSlot"></div>
+        <ul class="list" id="list"></ul>
+        <div id="emptyState" class="empty" hidden></div>
+        <p class="hint">Click a date to see what is on it. Double-click a date to add an event or reminder with a start and end time.</p>
+        <p class="hint" id="exampleNote" hidden>Entries marked Example are samples. Delete them any time.</p>
+        <div class="data-tools">
+          <button class="today-btn" id="exportBtn" type="button">Download events.json</button>
+          <button class="today-btn" id="importBtn" type="button">Import events.json</button>
+          <input type="file" id="importFile" accept="application/json,.json" hidden>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

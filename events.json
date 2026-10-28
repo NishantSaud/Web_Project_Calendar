@@ -1,0 +1,12 @@
+{
+  "2026-10-28": [
+    { "id": "ex1", "title": "Project check-in", "type": "event", "time": "14:00", "end": "15:00", "note": "Walk through the calendar demo.", "example": true }
+  ],
+  "2026-10-30": [
+    { "id": "ex2", "title": "Submit assignment", "type": "reminder", "time": "09:00", "end": "", "note": "", "example": true }
+  ],
+  "2026-11-02": [
+    { "id": "ex3", "title": "Study group", "type": "event", "time": "16:30", "end": "18:00", "note": "Library, second floor.", "example": true },
+    { "id": "ex4", "title": "Pay internet bill", "type": "reminder", "time": "", "end": "", "note": "", "example": true }
+  ]
+}
